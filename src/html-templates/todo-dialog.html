@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Test Page</title>
+    <style>
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+
+/* Dialog Styles */
+/* Style for native dialog element */
+
+dialog {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* width: 400px; */
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.144);
+
+}
+
+#form-todo-header,
+#form-todo-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#form-todo-id{
+    font-size: 10px;
+    color: rgb(197, 197, 197);
+}
+
+#form-todo-buttons {
+    margin-top: 20px;
+}
+
+.form-todo-item {
+    margin: 8px 0;
+}
+.form-todo-item > div {
+    font-size: 14px;
+}
+   
+
+
+    </style>
+</head>
+<body>
+<!-- 
+
+    dueDate,
+    priority,
+    projectAssigned,
+    status,
+    description, -->
+
+    <dialog id="form-todo" open>
+
+        <div id="form-todo-header">
+            <div>Add todo</div>
+            <div id ="form-todo-id">4</div>
+        </div>
+
+        <div class="form-todo-item">
+            <div>title</div>
+            <input type="text" id="#form-input-todo-title">
+        </div>
+
+        <div class="form-todo-item">
+            <div>Due Date</div>
+            <input type ="date" name="dueDate" id="form-input-todo-date">
+        </div>
+
+        <div class="form-todo-item">
+            <div>Priority</div>
+            <input type="Number" id="#form-input-todo-priority">
+        </div>
+
+        <div class="form-todo-item">
+            <div>Project Assigned: </div>
+            <div id="#form-input-todo-project">Project Assigned</div>
+            <div id="#form-input-todo-id">11</div>
+        </div>
+
+        <div class="form-todo-item">
+            <div>Description</div>
+            <textarea id="#form-input-todo-desc"></textarea>
+        </div>
+
+        <div id="form-todo-buttons">
+            <button>Save</button>
+            <button>Delete</button>
+        </div>
+
+    </dialog>
+
+    <script>
+        // We'll add JavaScript here in the next step
+    </script>
+</body>
+</html>

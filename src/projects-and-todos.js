@@ -1,13 +1,23 @@
 // Then export them
 export { createProject, createToDo};
 
+let projectCounter = 0
+let toDoCounter = 0
+
+
 // First define the functions
 const createProject = ({name, color, orderValue}) => {
+
+    let id = projectCounter;
+
     let properties = {
+        id,
         name,
         color,
         orderValue
     };
+
+    projectCounter++;
     
     return {
         getValue: (property) => properties[property],
@@ -22,13 +32,18 @@ const createProject = ({name, color, orderValue}) => {
 };
 
 const createToDo = ({title, description, dueDate, priority, projectAssigned, status}) => {
+    toDoCounter++;
+    let id = toDoCounter;
+
     let properties = {
+        id,
         title,
-        description,
+
         dueDate,
         priority,
         projectAssigned,
-        status
+        status,
+        description,
     };
     
     return {
@@ -40,7 +55,9 @@ const createToDo = ({title, description, dueDate, priority, projectAssigned, sta
                 console.log("No such property in ToDo item")
             }
         },
-        markAsDone: () => properties.status = "Done"
+        markAsDone: () => properties.status = "Done",
+        getProperties: () => Object.keys(properties)
+        
     }
 };
 

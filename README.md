@@ -12,8 +12,8 @@ Projects
     - Card Color
 
     Methods
-    - chagen project info
-    - delete projects
+    DONE - change project info
+    DONE - delete projects
 
 Todos (1)
     - title
@@ -23,12 +23,33 @@ Todos (1)
     - Project Assigned
 
     Methods:
-    - change todo info
-    - delete todo
-    - Mark as done
+    DONE - change todo info
+    DONE - delete todo
+    DONE - Mark as done
+
+Falta:
+
+MH:
+
+- edit project
+- edit to-do
+
+- delete project
+- delete todo
+
+- add todo - DONE
+- add project - DONE
+- todo done - DONE
+- Change "done" formating - DONE
+- change todo sorting - DONE
+- add projectless todos - DONE
+- Fix dates
 
 
-
+- Change project color - DONE
+- shrink project
+- Change item-name
+- init
     
 
 

@@ -4,9 +4,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="index.js" type = "module" defer></script>
+    <!-- <script src="index.js" type = "module" defer></script>
+    <script src="print-lists.js"></script> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
-    <p>This is something</p>
+    <div id="main-container">
+
+        <dialog id="form-add-project">
+
+            <div id="form-project-header">
+                <div>Add / Edit Project</div>
+                <div id ="form-project-id">4</div>
+            </div>
+
+            <div class="form-project-item">
+                <div>Name</div>
+                <input type="text" id="form-input-project-name">
+            </div>
+
+            <div class="form-project-item">
+                <div>Color</div>
+                <select name="colors" id="form-input-project-color">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="purple">Purple</option>
+                    <option value="orange">Orange</option>
+                    <option value="pink">Pink</option>
+                    <option value="brown">Brown</option>
+                    <option value="gray">Gray</option>
+                    <option value="black">Black</option>
+                </select>
+            </div>
+
+            <div class="form-project-item">
+                <div>Order Index</div>
+                <input type="Number" id="form-input-project-index">
+            </div>
+
+            <div id="form-project-buttons">
+                <button id="form-project-save">Save</button>
+                <button id="form-project-delete">Delete</button>
+            </div>
+
+        </dialog>
+
+        <dialog id="form-add-todo">
+
+            <div id="form-todo-header">
+                <div>Add todo</div>
+                <div id ="form-todo-id">New ToDo</div>
+            </div>
+    
+            <div class="form-todo-item">
+                <div>To-do Title</div>
+                <input type="text" id="form-input-todo-title">
+            </div>
+    
+            <div class="form-todo-item">
+                <div>Due Date</div>
+                <input type ="date" name="dueDate" id="form-input-todo-date">
+            </div>
+    
+            <div class="form-todo-item">
+                <div>Priority</div>
+                <input type="Number" id="form-input-todo-priority">
+            </div>
+    
+            <div class="form-todo-item">
+                <div>Project Assigned: </div>
+                <div id="form-input-todo-project">Project Assigned</div>
+                <div id="form-input-todo-project-id">11</div>
+            </div>
+    
+            <div class="form-todo-item">
+                <div>Description</div>
+                <textarea id="form-input-todo-desc"></textarea>
+            </div>
+    
+            <div id="form-todo-buttons">
+                <button id = "form-todo-save">Save</button>
+                <button id = "form-todo-delete">Delete</button>
+            </div>
+    
+        </dialog>
+
+        <div id="header">To Do List!</div>
+        <div id="interface">
+            <button id = "btn-add-project">Add a project</button>
+        </div>
+        <div id="main">
+            
+
+            <div class="project-container">
+                <div class="project-header">
+                    <div class="project-name">Project Name 1</div>
+                    <button class="project-edit">Edit</button>
+                </div>
+
+                <div class="todo-container">
+
+
+                    <div class="todo-name">todo Name</div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>       
+                
+                <div class = "dotted-line" style = "border: 1px dashed gray;"></div>
+                
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="project-container">
+                <div class="project-header">
+                    <div class="project-name">Project Name 1</div>
+                    <button class="project-edit">Edit</button>
+                </div>
+
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>                
+                
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="project-container">
+                <div class="project-header">
+                    <div class="project-name">Project Name 1</div>
+                    <button class="project-edit">P Edit</button>
+                </div>
+
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>                
+                
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+
+                <div class="todo-container">
+
+                    <div class="todo-header">
+                        <div class="todo-name">todo Name</div>
+                    </div>
+                    <div class="todo-body">This is Info <br> This is Info <br> This is Info</div>
+                    <div class="todo-buttons">
+                        <button class="todo-done">Done</button>
+                        <button class="todo-edit">Edit</button>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </body>
 </html>
