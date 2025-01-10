@@ -156,8 +156,6 @@ function validateTodoForm(title, dueDate, priority, projectId, description) {
 
         if (isNaN(selectedDate.getTime())) {
             errors.push('Invalid date format');
-        } else if (selectedDate < today) {
-            errors.push('Due date cannot be in the past');
         }
     }
 

@@ -55,7 +55,11 @@ const createToDo = ({title, description, dueDate, priority, projectAssigned, sta
                 console.log("No such property in ToDo item")
             }
         },
-        markAsDone: () => properties.status = "Done",
+        markAsDone: () => {
+            if(properties.status != "Done") {
+                properties.status = "Done"
+            } else {properties.status = "notDone"}
+        },
         getProperties: () => Object.keys(properties)
         
     }
