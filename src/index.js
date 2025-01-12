@@ -7,6 +7,7 @@ import { projects, toDos } from "./manage-Lists.js";
 import { printToConsole, clearProjects, addElementsToDom, returnToDoId, returnProjectId} from "./manage-DOM.js";
 import {generateTestingElements} from "./testing-module.js"
 import {openAddProjectForm, getFormProjectData, openEditProjectForm, openAddTodoForm, openEditTodoForm, getFormTodoData} from "./form-manager.js"
+import {exportDataToLocalStorage, importDataFromLocalStorage, clearLocalStorage} from "./manage-local-storage.js"
 
 // Create ghost project
 const ghostProject = createProject({
@@ -15,19 +16,40 @@ const ghostProject = createProject({
     orderValue: 99
 });
 
-generateTestingElements()
 
-projects.sortProjects()
-const projectList = projects.getProjects();
-const todoList = toDos.getToDos();
-clearProjects();
-refreshUI();
-setupUIButtons();
+init()
+function init() {
+    const blnLocalStorageAvailable = importDataFromLocalStorage();
+    if (!blnLocalStorageAvailable) {
+        projects.clearAll()
+        toDos.clearAll()
+        generateTestingElements()
+
+    }
+    const projectList = projects.getProjects();
+    const todoList = toDos.getToDos();
+    projects.sortProjects()
+    clearProjects();
+    refreshUI();
+    console.log("refresh UI")
+    setupUIButtons();
+}
+
+
+window.addEventListener("beforeunload", () => {
+    console.log("This is a load event")
+    exportDataToLocalStorage()();
+})
+
+
 
 function setupUIButtons () {
     const btnAddProject = document.querySelector("#btn-add-project");
     btnAddProject.addEventListener("click", openAddProjectForm);
 
+    const btnClearAll = document.querySelector("#btn-clear-all");
+    btnClearAll.addEventListener("click", clearAll);
+    
     const btnSaveProject = document.querySelector("#form-project-save");
     btnSaveProject.addEventListener("click", saveProjectFromForm);
 
@@ -72,7 +94,7 @@ function refreshUI () {
     toDos.sortToDo()
 
     clearProjects()
-    addElementsToDom(projectList, todoList, ghostProject);
+    addElementsToDom(projects.getProjects(), toDos.getToDos(), ghostProject);
     setupToDoButtons();
     setupAddTodoButtons();
     setupEditProjectButtons();
@@ -112,6 +134,7 @@ function deleteProjectFromForm() {
     const projectData = getFormProjectData("delete");
     if (projectData.id === "New Project") return
     projects.removeProject(projects.getProjectByID(projectData.id))
+    toDos.deleteAllTodosFromProject(projectData.id)
 
     refreshUI();
 }
@@ -159,4 +182,11 @@ function deleteTodoFromForm() {
 function markSelectedToDoAsDone(targetEle) {
     const todoId = returnToDoId(targetEle)
     toDos.getToDobyID(todoId).markAsDone()  
+}
+
+function clearAll() {
+    clearLocalStorage()
+    projects.clearAll()
+    toDos.clearAll()
+    refreshUI()
 }

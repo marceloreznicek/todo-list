@@ -6,9 +6,14 @@ let toDoCounter = 0
 
 
 // First define the functions
-const createProject = ({name, color, orderValue}) => {
+const createProject = ({name, color, orderValue, presetId = undefined}) => {
 
-    let id = projectCounter;
+    let id = -1
+    if (presetId === undefined) {
+        id = projectCounter;
+    } else {
+        id = Number(presetId);
+    } 
 
     let properties = {
         id,
@@ -28,12 +33,19 @@ const createProject = ({name, color, orderValue}) => {
                 console.log("No such property in project item")
             }
         },
+        getProperties: () => Object.keys(properties)
     }
 };
 
-const createToDo = ({title, description, dueDate, priority, projectAssigned, status}) => {
+const createToDo = ({title, description, dueDate, priority, projectAssigned, status, presetId = undefined}) => {
+
     toDoCounter++;
-    let id = toDoCounter;
+    let id = -1
+    if (presetId === undefined) {
+        id = toDoCounter;
+    } else {
+        id = Number(presetId);
+    } 
 
     let properties = {
         id,

@@ -44,6 +44,11 @@
     color: white
 }
 
+#btn-clear-all {
+    background-color: #7467e6;
+    color: white 
+}
+
 .project-container {
     padding: 10px;
 

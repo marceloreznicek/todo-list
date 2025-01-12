@@ -20,6 +20,8 @@ const projects = {
 
     sortProjects: () => projects.projectList.sort((a, b) => a.getValue("orderValue") - b.getValue("orderValue")),
     getProjects: () => projects.projectList,
+    clearAll: () => projects.projectList = [],
+
 };
 
 const toDos = {
@@ -50,5 +52,13 @@ const toDos = {
 
     }),
         // a.getValue("dueDate") < b.getValue("dueDate") ? -1 : 1),
-    getToDos: () => toDos.todoList
+    getToDos: () => toDos.todoList,
+    clearAll: () => toDos.todoList = [],
+    deleteAllTodosFromProject: (projectId) => {
+        const todoDeleteList = toDos.todoList.filter((todo) => todo.getValue("projectAssigned") == projectId)
+        todoDeleteList.forEach ((todo)=> {
+            toDos.removeToDoByID(todo.getValue("id"))
+        }) 
+    }
+    
 }

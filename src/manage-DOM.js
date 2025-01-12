@@ -38,8 +38,6 @@ function addElementsToDom(projectList, todoListOriginal, ghostProject) {
                 divProject.appendChild(todoElement)
                 todoList.splice(i, 1)
                 i--
-
-
             }
         }
     });

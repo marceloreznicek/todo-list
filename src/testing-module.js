@@ -9,21 +9,23 @@ function generateTestingElements() {
     const project1 = createProject({
         name: "Personal Tasks",
         color: "blue",
-        orderValue: 1
+        orderValue: 1,
+        presetId: 1
     });
 
     const project2 = createProject({
         name: "Work Project",
         color: "red",
-        orderValue: 2
+        orderValue: 2,
+        presetId: 2
     });
 
     const project3 = createProject({
         name: "Home Renovation",
         color: "green",
-        orderValue: 3
+        orderValue: 3,
+        presetId: 3
     });
-
 
     const todo2 = createToDo({
         title: "Quarterly Report",
